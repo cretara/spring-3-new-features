@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Spring3NewFeaturesApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Spring3NewFeaturesApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Spring3NewFeaturesApplication.class, args);
+    }
 
 }
