@@ -24,11 +24,11 @@ public abstract class BaseModelEntity {
     private Long id;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
+    @Column(nullable = false, updatable = false, columnDefinition = "TIME DEFAULT CURRENT_TIMESTAMP")
     private Instant createdDate;
 
     @LastModifiedDate
-    @Column(nullable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
+    @Column(nullable = false, columnDefinition = "TIME DEFAULT CURRENT_TIMESTAMP")
     private Instant lastModifiedDate;
     /**
      * This property reports an indication of the user that requested the initial addition of
