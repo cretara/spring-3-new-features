@@ -24,28 +24,22 @@ public abstract class BaseModelEntity {
     private Long id;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false, columnDefinition = "TIME DEFAULT CURRENT_TIMESTAMP")
+    @Column(nullable = false, updatable = false)
     private Instant createdDate;
 
     @LastModifiedDate
-    @Column(nullable = false, columnDefinition = "TIME DEFAULT CURRENT_TIMESTAMP")
+    @Column(nullable = false)
     private Instant lastModifiedDate;
-    /**
-     * This property reports an indication of the user that requested the initial addition of
-     * the entity in the database
-     */
+
     @CreatedBy
     @Column(updatable = false)
     @Nullable
     private String creationUser;
-    /**
-     * This property reports an indication of the last user that requested an update of this entity
-     */
+
     @Nullable
     @LastModifiedBy
     private String lastModificationUser;
 
-    // base toString that only prints the class name and id - mainly useful as fallback or to include as super with lombok @ToString
     @Override
     public String toString() {
         return getClass().getName() + " [id=" + id + "]";
