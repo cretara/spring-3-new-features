@@ -1,5 +1,6 @@
-package dev.cretara.spring3newfeatures.model;
+package dev.cretara.spring3newfeatures.person.model;
 
+import dev.cretara.spring3newfeatures.configuration.model.BaseModelEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import lombok.AllArgsConstructor;

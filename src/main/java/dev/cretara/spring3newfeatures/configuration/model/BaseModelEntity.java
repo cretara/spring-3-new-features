@@ -1,4 +1,4 @@
-package dev.cretara.spring3newfeatures.model;
+package dev.cretara.spring3newfeatures.configuration.model;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

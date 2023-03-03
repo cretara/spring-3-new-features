@@ -2,7 +2,7 @@ package dev.cretara.spring3newfeatures.configuration;
 
 import com.github.javafaker.Faker;
 import com.google.common.base.Suppliers;
-import dev.cretara.spring3newfeatures.model.Person;
+import dev.cretara.spring3newfeatures.person.model.Person;
 import org.springframework.stereotype.Component;
 
 import java.util.Locale;

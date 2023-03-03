@@ -1,6 +1,6 @@
 package dev.cretara.spring3newfeatures.configuration;
 
-import dev.cretara.spring3newfeatures.model.Person;
+import dev.cretara.spring3newfeatures.person.model.Person;
 import dev.cretara.spring3newfeatures.repository.IPersonRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
