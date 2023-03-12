@@ -17,3 +17,10 @@ spring:
     init:
       platform: postgres
 debug: true
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          filter:
+            CommonsRequestLoggingFilter: debug

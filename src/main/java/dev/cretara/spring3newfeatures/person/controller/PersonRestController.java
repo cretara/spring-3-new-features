@@ -1,6 +1,6 @@
 package dev.cretara.spring3newfeatures.person.controller;
 
-import dev.cretara.spring3newfeatures.person.dto.PersonDTO;
+import dev.cretara.spring3newfeatures.person.model.Person;
 import dev.cretara.spring3newfeatures.person.service.IPersonService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Iterator;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public class PersonRestController {
     private final IPersonService personService;
 
     @GetMapping("/")
-    public List<PersonDTO> getAllPerson() {
+    public Iterator<Person> getAllPerson() {
         log.info("GET /persons/");
         return personService.getAllPerson();
     }
