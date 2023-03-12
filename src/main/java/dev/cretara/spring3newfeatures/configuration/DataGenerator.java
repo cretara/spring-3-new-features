@@ -21,7 +21,7 @@ public class DataGenerator {
         return fakerSupplier.get();
     }
 
-    private String fakeFiscalCode() {
+    public String generateFakeFiscalCode() {
         return faker().bothify("??????##?##?###?", true);
     }
 
@@ -29,7 +29,7 @@ public class DataGenerator {
         Faker faker = faker();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
-        return new Person(firstName, lastName, fakeFiscalCode());
+        return new Person(firstName, lastName, generateFakeFiscalCode());
     }
 
 }
