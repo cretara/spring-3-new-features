@@ -22,7 +22,6 @@ public class PersonRestController {
 
     @GetMapping("/")
     public Iterator<Person> getAllPerson() {
-        log.info("GET /persons/");
         return personService.getAllPerson();
     }
 

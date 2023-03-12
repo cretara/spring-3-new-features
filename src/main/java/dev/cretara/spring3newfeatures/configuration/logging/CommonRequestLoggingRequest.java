@@ -9,10 +9,9 @@ public class CommonRequestLoggingRequest {
     @Bean
     public CommonsRequestLoggingFilter requestLoggingFilter() {
         CommonsRequestLoggingFilter loggingFilter = new CommonsRequestLoggingFilter();
-        loggingFilter.setIncludeClientInfo(true);
         loggingFilter.setIncludeQueryString(true);
         loggingFilter.setIncludePayload(true);
-        loggingFilter.setMaxPayloadLength(64000);
+        loggingFilter.setMaxPayloadLength(10000);
         return loggingFilter;
     }
 

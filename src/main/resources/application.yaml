@@ -12,3 +12,10 @@ spring:
   sql:
     init:
       platform: postgres
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          filter:
+            CommonsRequestLoggingFilter: debug
