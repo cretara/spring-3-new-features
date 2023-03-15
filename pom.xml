@@ -5,12 +5,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.0.4</version>
+        <relativePath/>
     </parent>
     <groupId>dev.cretara</groupId>
     <artifactId>spring-3-new-features</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>spring-3-new-features</name>
     <description>Spring 3 new features test and demo</description>
     <properties>
@@ -116,6 +116,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <layers>
+                        <enabled>true</enabled>
+                    </layers>
+                    <image>
+                        <name>docker.io/cretaradev/spring-3-new-features/${project.artifactId}:${project.version}</name>
+                    </image>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
