@@ -45,7 +45,7 @@ class PersonRestControllerTest {
 
     @Test
     void testGetAllPerson_withIntegrationTest() throws Exception {
-        when(personService.getAllPerson()).thenReturn(persons.iterator());
+        when(personService.getAllPerson()).thenReturn(persons);
         mockMvc.perform(get("/persons/"))
                .andExpect(status().isOk())
                .andExpect(jsonPath("$", hasSize(2)))

@@ -2,8 +2,8 @@ package dev.cretara.spring3newfeatures.person.service;
 
 import dev.cretara.spring3newfeatures.person.model.Person;
 
-import java.util.Iterator;
+import java.util.List;
 
 public interface IPersonService {
-    Iterator<Person> getAllPerson();
+    List<Person> getAllPerson();
 }
