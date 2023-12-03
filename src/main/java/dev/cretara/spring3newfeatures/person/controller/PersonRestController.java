@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Iterator;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public class PersonRestController {
     private final IPersonService personService;
 
     @GetMapping("/")
-    public Iterator<Person> getAllPerson() {
+    public List<Person> getAllPerson() {
         return personService.getAllPerson();
     }
 

@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -19,9 +19,8 @@ public class PersonServiceImpl implements IPersonService {
     private final IPersonRepository personRepository;
 
     @Override
-    public Iterator<Person> getAllPerson() {
+    public List<Person> getAllPerson() {
         return personRepository
-                .findAll()
-                .iterator();
+                .findAll();
     }
 }
