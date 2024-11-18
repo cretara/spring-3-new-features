@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,8 +25,7 @@ public class DataSetup implements ApplicationListener<ApplicationReadyEvent> {
 
     @Lazy
     private final IPersonRepository personRepository;
-
-
+    
     @Override
     public void onApplicationEvent(@NonNull ApplicationReadyEvent applicationReadyEvent) {
         log.debug("applicationReadyEvent {}", applicationReadyEvent);
