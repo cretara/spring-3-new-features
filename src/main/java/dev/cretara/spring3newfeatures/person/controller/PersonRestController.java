@@ -1,6 +1,6 @@
 package dev.cretara.spring3newfeatures.person.controller;
 
-import dev.cretara.spring3newfeatures.person.model.Person;
+import dev.cretara.spring3newfeatures.person.model.PersonDto;
 import dev.cretara.spring3newfeatures.person.service.IPersonService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ public class PersonRestController {
     private final IPersonService personService;
 
     @GetMapping("/")
-    public List<Person> getAllPerson() {
+    public List<PersonDto> getAllPerson() {
         return personService.getAllPerson();
     }
 

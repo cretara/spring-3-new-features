@@ -2,6 +2,7 @@ package dev.cretara.spring3newfeatures;
 
 import dev.cretara.spring3newfeatures.configuration.DataGenerator;
 import dev.cretara.spring3newfeatures.person.model.Person;
+import dev.cretara.spring3newfeatures.person.model.PersonDto;
 import dev.cretara.spring3newfeatures.person.service.IPersonService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,27 +35,32 @@ class PersonRestControllerTest {
     private Person secondPerson;
     @MockBean
     private IPersonService personService;
-    private List<Person> persons;
+    private List<PersonDto> personDTOList;
 
     @BeforeEach
     void setUp() {
         firstPerson = dataGenerator.generateFakePerson();
         secondPerson = dataGenerator.generateFakePerson();
-        persons = Arrays.asList(firstPerson, secondPerson);
+        PersonDto firstPersonDTO = new PersonDto(1L, firstPerson.getName(), firstPerson.getSurname(), firstPerson.getCf());
+        PersonDto secondPersonDTO = new PersonDto(2L, secondPerson.getName(), secondPerson.getSurname(), secondPerson.getCf());
+        personDTOList = Arrays.asList(
+                firstPersonDTO,
+                secondPersonDTO
+        );
     }
 
     @Test
     void testGetAllPerson_withIntegrationTest() throws Exception {
-        when(personService.getAllPerson()).thenReturn(persons);
+        when(personService.getAllPerson()).thenReturn(personDTOList);
         mockMvc.perform(get("/persons/"))
-               .andExpect(status().isOk())
-               .andExpect(jsonPath("$", hasSize(2)))
-               .andExpect(jsonPath("$[0].name", is(firstPerson.getName())))
-               .andExpect(jsonPath("$[0].surname", is(firstPerson.getSurname())))
-               .andExpect(jsonPath("$[0].cf", is(firstPerson.getCf())))
-               .andExpect(jsonPath("$[1].name", is(secondPerson.getName())))
-               .andExpect(jsonPath("$[1].surname", is(secondPerson.getSurname())))
-               .andExpect(jsonPath("$[1].cf", is(secondPerson.getCf())));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].name", is(firstPerson.getName())))
+                .andExpect(jsonPath("$[0].surname", is(firstPerson.getSurname())))
+                .andExpect(jsonPath("$[0].cf", is(firstPerson.getCf())))
+                .andExpect(jsonPath("$[1].name", is(secondPerson.getName())))
+                .andExpect(jsonPath("$[1].surname", is(secondPerson.getSurname())))
+                .andExpect(jsonPath("$[1].cf", is(secondPerson.getCf())));
     }
 
 }
