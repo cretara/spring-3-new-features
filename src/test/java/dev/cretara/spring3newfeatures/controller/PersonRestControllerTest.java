@@ -1,4 +1,4 @@
-package dev.cretara.spring3newfeatures;
+package dev.cretara.spring3newfeatures.controller;
 
 import dev.cretara.spring3newfeatures.configuration.DataGenerator;
 import dev.cretara.spring3newfeatures.person.model.Person;
